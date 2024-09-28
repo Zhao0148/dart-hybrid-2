@@ -7,11 +7,11 @@ class Lucky {
   int? max;
   Lucky() {
     Map<String, String> envVars = Platform.environment;
-    String? minValue = envVars['MIN'];
-    String? maxValue = envVars['MAX'];
+    String? lowerLimit = envVars['MIN'];
+    String? upperLimit = envVars['MAX'];
 
-    min = int.tryParse(minValue ?? '1');
-    max = int.tryParse(maxValue ?? '100');
+    min = int.tryParse(lowerLimit ?? '1');
+    max = int.tryParse(upperLimit ?? '100');
     luckyNumber = generateNumber(min!, max!);
   }
 
